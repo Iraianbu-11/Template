@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -28,6 +29,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    protected void onStart() {
+        super.onStart();
+        IntentFilter airplaneFilter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+        IntentFilter batteryfilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        IntentFilter bluetoothfilter = new IntentFilter(android.bluetooth.BluetoothAdapter.ACTION_STATE_CHANGED);
+        IntentFilter bootFilter = new IntentFilter(Intent.ACTION_BOOT_COMPLETED);
+        registerReceiver(airplaneMode, airplaneFilter);
+        registerReceiver(batteryLevel, batteryfilter);
+        registerReceiver(bluetoothMode,bluetoothfilter);
+        registerReceiver(bootReceiver,bootFilter);
+
+    }
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -36,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         unregisterReceiver(batteryLevel);
         unregisterReceiver(bootReceiver);
     }
+
     private class BatteryLevel extends BroadcastReceiver {
         private final static String BATTERY_LEVEL = "level";
 

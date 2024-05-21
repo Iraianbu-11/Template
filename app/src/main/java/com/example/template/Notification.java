@@ -77,7 +77,7 @@ public class Notification extends AppCompatActivity {
         builder.addAction(android.R.drawable.ic_menu_close_clear_cancel, "Yes", yesPendingIntent);
 
         // Add action to dismiss the notification when "No" is clicked
-        Intent noIntent = new Intent(this, Set2.class); // Replace DashBoard.class with your actual activity
+        Intent noIntent = new Intent(this, Set1.class); // Replace DashBoard.class with your actual activity
         noIntent.setAction("DISMISS_NOTIFICATION");
         PendingIntent noPendingIntent = PendingIntent.getBroadcast(this, 0, noIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         builder.addAction(android.R.drawable.ic_menu_close_clear_cancel, "No", noPendingIntent);
