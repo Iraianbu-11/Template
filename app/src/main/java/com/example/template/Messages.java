@@ -31,6 +31,9 @@ public class Messages extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messages);
 
+
+        // Group Messages
+
 //        button = findViewById(R.id.Button);
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -40,6 +43,7 @@ public class Messages extends AppCompatActivity {
 //        });
 
 
+        // Schedule Messages
 //        editTextPhone1 = findViewById(R.id.editTextPhone1);
 //        editTextPhone2 = findViewById(R.id.editTextPhone2);
 //        editTextPhone3 = findViewById(R.id.editTextPhone3);
@@ -152,10 +156,6 @@ public class Messages extends AppCompatActivity {
             }
         }, delayMillis);
     }
-
-
-
-
 
 }
 

@@ -79,13 +79,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Set2"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Set1"
             android:exported="false">
             <meta-data
