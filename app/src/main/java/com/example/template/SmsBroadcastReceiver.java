@@ -12,10 +12,8 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String[] phoneNumbers = intent.getStringArrayExtra("phoneNumbers");
         String message = intent.getStringExtra("message");
-
         // Get SmsManager instance
         SmsManager smsManager = SmsManager.getDefault();
-
         // Send SMS to each phone number
         for (String phoneNumber : phoneNumbers) {
             smsManager.sendTextMessage(phoneNumber, null, message, null, null);

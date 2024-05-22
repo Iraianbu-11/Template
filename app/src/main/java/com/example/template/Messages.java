@@ -34,13 +34,13 @@ public class Messages extends AppCompatActivity {
 
         // Group Messages
 
-//        button = findViewById(R.id.Button);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                getContacts();
-//            }
-//        });
+        button = findViewById(R.id.Button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getContacts();
+            }
+        });
 
 
         // Schedule Messages
@@ -128,7 +128,6 @@ public class Messages extends AppCompatActivity {
     private void sendDelayedSMS(String[] phoneNumbers, String message, int delaySeconds) {
         // Convert delaySeconds to milliseconds
         long delayMillis = delaySeconds * 1000;
-
         // Create PendingIntent for the BroadcastReceiver to handle the sending of SMS
         Intent intent = new Intent(getApplicationContext(), SmsBroadcastReceiver.class);
         intent.putExtra("phoneNumbers", phoneNumbers);
