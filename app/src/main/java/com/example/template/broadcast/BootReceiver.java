@@ -10,4 +10,6 @@ public class BootReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Toast.makeText(context.getApplicationContext(), "App started after Booted", Toast.LENGTH_SHORT).show();
     }
+
+
 }

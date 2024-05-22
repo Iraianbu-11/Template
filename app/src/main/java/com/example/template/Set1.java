@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.template.broadcast.UserBroadcast;
+
 public class Set1 extends AppCompatActivity {
     Button notification , dialog , location ,
-            menuButton , message , whatsapp;
+            menuButton , message , whatsapp,
+            userbroadcast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +23,12 @@ public class Set1 extends AppCompatActivity {
         menuButton = findViewById(R.id.menuBtn);
         message = findViewById(R.id.messageBtn);
         whatsapp = findViewById(R.id.whatsapp);
+        userbroadcast = findViewById(R.id.userbroadcast);
+
+        userbroadcast.setOnClickListener(v->{
+            startActivity(new Intent(this, UserBroadcast.class));
+        });
+
         notification.setOnClickListener(v->{
             startActivity(new Intent(this,Notification.class));
         });

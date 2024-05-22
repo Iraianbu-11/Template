@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.template.broadcast.AirplaneMode;
 import com.example.template.broadcast.BluetoothMode;
 import com.example.template.broadcast.BootReceiver;
+import com.example.template.broadcast.MyReceiver;
 
 public class MainActivity extends AppCompatActivity {
     Button set1;
@@ -27,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
         set1.setOnClickListener(v->{
             startActivity(new Intent(this,Set1.class));
         });
+
+        // User Broadcast Message
+
+        IntentFilter intentFilter = new IntentFilter("com.example.broadcast");
+        MyReceiver myReceiver = new MyReceiver();
+        registerReceiver(myReceiver,intentFilter);
     }
 
     protected void onStart() {
@@ -57,10 +64,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             int level = intent.getIntExtra(BATTERY_LEVEL, 0);
-            Toast.makeText(context, "Battery Level is" + level, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "Battery Level is" + level, Toast.LENGTH_SHORT).show();
             // progressBar.setProgress(level);
             // batteryText.setText("Battery Level is "+  level);
-
         }
     }
 }
